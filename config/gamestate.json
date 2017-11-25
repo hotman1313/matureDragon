@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "gameId": "099af96d-72e2-42f1-95a0-f70b85a39c07",
+    "formulaId": "0",
+    "mode": "SANDBOX",
+    "ruleSet": 1,
+    "useTheorem": false,
+    "countdown": null,
+    "currentState": {
+      "math": "$$\\cssId{exp0}{\\cssId{exp00}{\\cssId{exp000}{a}+\\cssId{exp001}{a}}=\\cssId{exp01}{2}}$$",
+      "status": "SUCCESS",
+      "gameStatus": "RUNNING",
+      "ids": [
+        "exp01",
+        "exp00",
+        "exp000",
+        "exp0",
+        "exp001"
+      ],
+      "rules": [
+        {
+          "exp01": [
+            {
+              "text": "$${2} => {{({2})}+{0}}$$",
+              "ruleId": 0,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${2} => {{({2})}*{1}}$$",
+              "ruleId": 1,
+              "type": "contextMenu"
+            }
+          ]
+        },
+        {
+          "exp00": [
+            {
+              "text": "$${{a}+{a}} => {{a}+{a}}$$",
+              "ruleId": 0,
+              "type": "drag_and_drop"
+            },
+            {
+              "text": "$${{a}+{a}} => {{({{a}+{a}})}+{0}}$$",
+              "ruleId": 1,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${{a}+{a}} => {({{a}+{a}})}$$",
+              "ruleId": 2,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${{a}+{a}} => {{a}*{({{1}+{1}})}}$$",
+              "ruleId": 3,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${{a}+{a}} => {{({a})}*{2}}$$",
+              "ruleId": 4,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${{a}+{a}} => {{({{a}+{a}})}*{1}}$$",
+              "ruleId": 5,
+              "type": "contextMenu"
+            }
+          ]
+        },
+        {
+          "exp000": [
+            {
+              "text": "$${a} => {{({a})}+{0}}$$",
+              "ruleId": 0,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${a} => {{({a})}*{1}}$$",
+              "ruleId": 1,
+              "type": "contextMenu"
+            }
+          ]
+        },
+        {
+          "exp0": [
+            {
+              "text": "$${{{a}+{a}}={2}} => {{{({{a}+{a}})}-{a}}={{2}-{a}}}$$",
+              "ruleId": 0,
+              "type": "drag_and_drop"
+            },
+            {
+              "text": "$${{{a}+{a}}={2}} => {{({{{a}+{a}}={2}})}+{0}}$$",
+              "ruleId": 1,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${{{a}+{a}}={2}} => {{({{{a}+{a}}={2}})}*{1}}$$",
+              "ruleId": 2,
+              "type": "contextMenu"
+            }
+          ]
+        },
+        {
+          "exp001": [
+            {
+              "text": "$${a} => {{({a})}+{0}}$$",
+              "ruleId": 0,
+              "type": "contextMenu"
+            },
+            {
+              "text": "$${a} => {{({a})}*{1}}$$",
+              "ruleId": 1,
+              "type": "contextMenu"
+            }
+          ]
+        }
+      ],
+      "timeline": {
+        "current": 0,
+        "elements": [
+          {
+            "index": 0,
+            "text": "$${{{a}+{a}}={2}}$$"
+          }
+        ]
+      }
+    }
+  }
+]

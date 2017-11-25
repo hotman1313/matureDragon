@@ -90,6 +90,7 @@ var self = module.exports = {
 			$('#rule1-formulas').append(elem)
 			$('#rule1-formulas').append('<hr class="my-4">')
 		}
+			$('#rule1-formulas').append('<input type="text" name="new-formula"/> <button id="add-new-formila" >Ajouter </button>')
 
 		utils.typesetMath(null, 'rule1-formulas')
 	}

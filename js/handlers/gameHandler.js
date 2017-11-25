@@ -23,8 +23,9 @@ var self = module.exports = {
 		//There's no game
 		else if (instance.gameState.currentGame == -1) {
 			$('.can-be-disabled').prop('disabled', true)
-
-			$('#main-formule').append('<h1 class="display-1">Aucune partie en cours <i class="fa fa-exclamation-triangle"></i></h1>')
+			var game_init_txt = "<h1 class=\"display-1\">Aucune partie en cours <i class=\"fa fa-exclamation-triangle\"></i></h1><br/>" +
+					"<h3> Cliquez sur <span class=\"fa fa-plus\"></span> pour commencer une partie</h3>"
+			$('#main-formule').append(game_init_txt)
 
 			self.setAnimations()
 		}
@@ -686,6 +687,27 @@ var self = module.exports = {
 
 		instance.requestHtml('GAME')
 	},
+	
+	/**
+	 * Function who asks confirmation before delete game
+	 * */
+	askToDelete: () => {
+		//$('#main-formule').append('<div id="confirmOverlay"><div id="confirmBox"><h1>Title of the confirm dialog</h1><p>Description of what is about to happen</p><div id="confirmButtons"><a class="button blue" href="#">Yes<span></span></a><a class="button gray" href="#">No<span></span></a></div></div></div>')
+		$.confirm({
+			columnClass: 'col-md-10 col-md-offset-2',
+		    title: 'Confirm!',
+		    content: 'Simple confirm!',
+		    buttons: {
+		        confirm: function () {
+		            self.deleteGame()
+		        },
+		        cancel: function () {
+		            $.alert('Canceled!');
+		        },
+		    }
+		});
+	},
+
 
 	/**
 	 * This function start a new countdown if the current game is a 'NORMAL' game.
@@ -702,6 +724,7 @@ var self = module.exports = {
 		var current = instance.gameState.getCurrent()
 
 		if (current.mode == 'NORMAL') {
+			
 			if (current.countdown == null)
 				current.countdown = new Countdown (Countdown.minutesToMilliseconds(2), self.timerOnOver, self.timerOnUpdate)
 
@@ -719,6 +742,25 @@ var self = module.exports = {
 
 			$('#game-timer').show()
 			$('#game-timer').tooltip('show')
+		}
+	},
+	
+	/**
+	 * Timer pause
+	 * */
+	pauseTimer: () => {
+		const instance = require('../Application')
+		const Countdown = require('../Countdown')
+
+		var current = instance.gameState.getCurrent()
+		
+		if(current.mode == 'NORMAL'){
+			if(current.countdown.state == 'STARTED'){
+				$('#main-formule').hide('fast')
+			}else{
+				$('#main-formule').show('fast')
+			}
+			current.countdown.pauseCountdown()
 		}
 	},
 

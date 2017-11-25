@@ -77,6 +77,18 @@ class Countdown {
 	stopCountdown () {
 		this.state = 'STOPPED'
 	}
+	
+	/**
+	 * Pause the countdown
+	 * */
+	pauseCountdown(){
+		if(this.state == 'STOPPED'){
+			this.startCountdown()
+		}
+		else{
+			this.state = "STOPPED"
+		}
+	}
 
 	/**
 	 * Return the time elapsedTime since the start of the countdown.
